@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CB Invoicer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="https://www.codebuilders.in/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/img/vps-white.png" alt="Logo" width="128px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light" type="submit">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="mt-4">
+            <!-- <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class="bi bi-plus"></i> Add New Student</button>
+            <button class="btn btn-secondary"> <i class="bi bi-receipt"></i> View Invoices</button>
+            <button class="btn btn-secondary me-2"> <i class="bi bi-person-fill-add"></i> Add Student</button> -->
+            <div class="row">
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card bg-purple text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div class="text-white-75 small">Student Management</div>
+                                    <div class="text-lg fw-bold" id="courseEnrollCount">
+                                        <!-- <span id="courseEnrollLoading">
+                                            <div class="spinner-border spinner-border-sm" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div> Loading...
+                                        </span> -->
+                                        128
+                                    </div>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-user-plus text-white-50">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small">
+                            <a class='text-white stretched-link' href='/courseenroll'>View Report</a>
+                            <div class="text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-chevron-right text-white-50">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card bg-pink text-dark h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div class="text-white-75 small">Invoices</div>
+                                    <div class="text-lg fw-bold" id="contactUsCount">
+                                        <!-- <span id="contactLoading">
+                                            <div class="spinner-border spinner-border-sm" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div> Loading...
+                                        </span> -->
+                                        33
+                                    </div>
+                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-message-square text-dark-50">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small">
+                            <a class='text-dark stretched-link' href='/invoiceMgmt.html'>View Report</a>
+                            <div class="text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-chevron-right text-dark-50">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card bg-purple text-white h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div class="text-white-75 small">Asset Management</div>
+                                    <div class="text-lg fw-bold" id="careersCount">
+                                        <!-- <span id="careerLoading">
+                                            <div class="spinner-border spinner-border-sm" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div> Loading...
+                                        </span> -->
+                                        26
+                                    </div>
+                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-users text-white-50">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small">
+                            <a class='text-white stretched-link' href='/careers'>View Tasks</a>
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-chevron-right text-dark-50">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-4">
+                    <div class="card bg-pink text-dark h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div class="text-white-75 small">Certification Management</div>
+                                    <div class="text-lg fw-bold" id="careersCount">
+                                        <!-- <span id="careerLoading">
+                                            <div class="spinner-border spinner-border-sm" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div> Loading...
+                                        </span> -->
+                                        56
+                                    </div>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-left">
+                                    <line x1="17" y1="10" x2="3" y2="10"></line>
+                                    <line x1="21" y1="6" x2="3" y2="6"></line>
+                                    <line x1="21" y1="14" x2="3" y2="14"></line>
+                                    <line x1="17" y1="18" x2="3" y2="18"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small">
+                            <a class='text-dark stretched-link' href='/marquee'>Update</a>
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-chevron-right text-dark-50">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invoice Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create New Invoice</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingFirstName"
+                                        placeholder="First Name">
+                                    <label for="floatingFirstName">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingLastName"
+                                        placeholder="Last Name">
+                                    <label for="floatingLastName">Last Name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInput">Email ID</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="Phone Number">
+                                    <label for="floatingPassword">Phone Number</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" placeholder="Address" id="floatingTextarea2"
+                                        style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Address</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="SSLC Percentage">
+                                    <label for="floatingPassword">SSLC Percentage</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="HSC Percentage">
+                                    <label for="floatingPassword">HSC Percentage</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="HSC Percentage">
+                                    <label for="floatingPassword">Diploma Percentage (if any)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="floatingInput"
+                                        placeholder="Date of Joining" readonly>
+                                    <label for="floatingInput">Date of Joining (Generated Automatically)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>Select Installment Type</option>
+                                        <option value="1">Single Payment - 1 x Rs.10,000</option>
+                                        <option value="2">2 Months Installment - 2 x Rs.5,000</option>
+                                        <option value="2">3 Months Installment - 3 x Rs.3,500</option>
+                                    </select>
+                                    <label for="floatingSelect">Installment Type</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>Select College</option>
+                                        <option value="Rajiv Gandhi College Of Engineering And Technology">Rajiv Gandhi
+                                            College Of Engineering And Technology</option>
+                                        <option value="Sri Manakula Vinayagar Engineering College">Sri Manakula
+                                            Vinayagar Engineering College</option>
+                                        <option value="Regency Institute Of Technology">Regency Institute Of Technology
+                                        </option>
+                                        <option value="Manakula Vinayagar Institute Of Technology">Manakula Vinayagar
+                                            Institute Of Technology</option>
+                                        <option value="Pondicherry Engineering College">Pondicherry Engineering College
+                                        </option>
+                                        <option value="Mother Theresa Institute Of Health Sciences">Mother Theresa
+                                            Institute Of Health Sciences</option>
+                                        <option value="Rvs College Of Engineering & Technology">Rvs College Of
+                                            Engineering & Technology</option>
+                                        <option value="Christ College Of Engineering And Technology">Christ College Of
+                                            Engineering And Technology</option>
+                                        <option value="Shri Krishnaa College Of Engineering And Technology">Shri
+                                            Krishnaa College Of Engineering And Technology</option>
+                                        <option value="Sri Ganesh College Of Engineering And Technology">Sri Ganesh
+                                            College Of Engineering And Technology</option>
+                                        <option value="Achariya College Of Engineering Technology">Achariya College Of
+                                            Engineering Technology</option>
+                                        <option value="Motilal Nehru Government Polytechnic College">Motilal Nehru
+                                            Government Polytechnic College</option>
+                                        <option value="Bharathiyar College Of Engineering And Technology">Bharathiyar
+                                            College Of Engineering And Technology</option>
+                                        <option value="Rajiv Gandhi College Of Engineering And Technology">Rajiv Gandhi
+                                            College Of Engineering And Technology</option>
+                                        <option value="Dr. S.J.S. Paul Memorial College Of Engineering And Technology">
+                                            Dr. S.J.S. Paul Memorial College Of Engineering And Technology</option>
+                                        <option value="Women's Polytechnic College (Govt. Of Puducherry)">Women's
+                                            Polytechnic College (Govt. Of Puducherry)</option>
+                                        <option value="Pope John Paul Ii College Of Education">Pope John Paul Ii College
+                                            Of Education</option>
+                                        <option value="Karaikal Polytechnic College">Karaikal Polytechnic College
+                                        </option>
+                                        <option value="Bharathiar Palkalai Koodam">Bharathiar Palkalai Koodam</option>
+                                        <option value="Rvs College Of Computer Application">Rvs College Of Computer
+                                            Application</option>
+                                        <option value="Alpha College Of Engineering & Technology">Alpha College Of
+                                            Engineering & Technology</option>
+                                        <option value="Women's Polytechnic College">Women's Polytechnic College</option>
+                                        <option value="Rvs Institute Of Management Studies & Computer Application">Rvs
+                                            Institute Of Management Studies & Computer Application</option>
+                                        <option value="Hayagriva Polytechnic College">Hayagriva Polytechnic College
+                                        </option>
+                                        <option value="Dr.B.R.Ambedkar Polytechnic College">Dr.B.R.Ambedkar Polytechnic
+                                            College</option>
+                                        <option value="Indira Gandhi Polytechnic College, Mahe">Indira Gandhi
+                                            Polytechnic College, Mahe</option>
+                                        <option
+                                            value="Perunthanalaivar Kamarajar Institute Of Engineering And Technology">
+                                            Perunthanalaivar Kamarajar Institute Of Engineering And Technology</option>
+                                        <option
+                                            value="Pondicherry Institute Of Hotel Management And Catering Technology">
+                                            Pondicherry Institute Of Hotel Management And Catering Technology</option>
+                                        <option value="Others">
+                                            Others</option>
+                                    </select>
+                                    <label for="floatingSelect">College</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="College Name" disabled>
+                                    <label for="floatingPassword">College Name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="Department">
+                                    <label for="floatingPassword">Degree</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="College Name">
+                                    <label for="floatingPassword">Department</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                            <option selected>Select Current year of Study</option>
+                                            <option value="1">First Year</option>
+                                            <option value="2">Second Year</option>
+                                            <option value="3">Third Year</option>
+                                            <option value="4">Final Year</option>
+                                        </select>
+                                        <label for="floatingSelect">Current year of Study</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Year of Passout</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Father's Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Father's Mobile Number</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Mother's Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Mother's Mobile Number</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>Select Mode of Study</option>
+                                        <option value="1">Online</option>
+                                        <option value="2">Offline</option>
+                                    </select>
+                                    <label for="floatingSelect">Current Mode of Study</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Mother's Mobile Number</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

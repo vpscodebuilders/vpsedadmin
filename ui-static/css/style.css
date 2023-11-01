@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-purple {
+  color: #9975f3;
+}
+
+.bg-purple {
+  background-color: #9975f3;
+  color: white !important;
+}
+
+.cl-purple {
+  background-color: #9975f3;
+  color: white !important ;
+}
+
+.text-pink {
+  color: #f5aef8;
+}
+
+.bg-pink{
+  background-color: #f5aef8;
+}
+
+.testimonial-slider .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  background-color: #dc3545;
+  border-radius: 100%;
+}
+
+.testimonial-slider {
+  padding: 10px 0px 40px;
+}
+
+.bgpur-gradient {
+  background-image: linear-gradient(45deg, #9975f3, #f5aef8) !important;
+}
+
+.text-gradient {
+  background-image: linear-gradient(45deg, #9975f3, #f5aef8) !important;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.card-bg-purple {
+  background-color: #9975f3;
+  color: white;
+  padding: 1rem;
+  border-radius: 11px !important;
+}
+
+.card-bg-pink {
+  background-color: #f5aef8;
+  color: #212529;
+  padding: 1rem;
+  border-radius: 11px !important;
+}
+
+.btn-outline-secondary {
+  /* background-color: #f5aef8 !important; */
+  border-color: #f5aef8;
+  color: #f5aef8;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f5aef8 !important;
+  /* border-width: 1rem !important; */
+  border-color: #f5aef8 !important;
+  color: #212529;
+}
+
+.btn-primary {
+  background-color: #9975f3 !important;
+  border-color: #7b4cf0 !important;
+}
+
+.btn-primary:hover {
+  outline: none !important;
+}
+
+.btn-primary:focus {
+  border-width: 1px !important;
+  border-color: #7b4cf0 !important;
+}
+
+.bg-marquee {
+  background-color: #7b4cf0;
+}
+
+.btn-secondary {
+  background-color: #f5aef8 !important;
+  color: currentColor;
+  border-color: #f5aef8 !important;
+}
+
+.btn-secondary:hover {
+  color: currentColor;
+  outline: none !important;
+}
+
+.btn-secondary:focus {
+  border-width: 1px !important;
+  color: currentColor;
+  border-color: #f5aef8 !important;
+}
+
+.custom-row {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.custom-row > div {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.table-purple{
+  background-color: #9975f3 !important;
+  color: #fff !important;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-row {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 0.75rem;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+}
+.icon-link > .bi {
+  margin-top: 0.125rem;
+  margin-left: 0.125rem;
+  transition: transform 0.25s ease-in-out;
+  fill: currentColor;
+}
+.icon-link:hover > .bi {
+  transform: translate(0.25rem);
+}
+
+.icon-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.rounded-4 {
+  border-radius: 0.5rem;
+}
+.rounded-5 {
+  border-radius: 1rem;
+}
+
+.text-shadow-1 {
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+.text-shadow-2 {
+  text-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.text-shadow-3 {
+  text-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
