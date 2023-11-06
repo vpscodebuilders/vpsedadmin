@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CB Invoicer</title>
+    <title>CB Invoicer | Invoices</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand d-flex" href="/">
                 <img src="./assets/img/vps-white.png" alt="Logo" width="128px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admin</a>
+                        <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -48,163 +48,130 @@
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-light" type="submit">Logout</button>
+                <!-- <button class="btn btn-secondary text-dark btn-sm me-2" type="submit">Login</button> -->
+                <button class="btn btn-secondary text-dark btn-sm" type="submit">Logout</button>
             </div>
         </div>
     </nav>
 
     <div class="container">
+        <div class="mt-3">
+            <h3 class="fw-bold text-purple">Invoices</h3>
+        </div>
+        <hr>
         <div class="mt-4">
-            <!-- <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 <i class="bi bi-plus"></i> Add New Student</button>
-            <button class="btn btn-secondary"> <i class="bi bi-receipt"></i> View Invoices</button>
-            <button class="btn btn-secondary me-2"> <i class="bi bi-person-fill-add"></i> Add Student</button> -->
-            <div class="row">
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="card bg-purple text-white h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="me-3">
-                                    <div class="text-white-75 small">Student Management</div>
-                                    <div class="text-lg fw-bold" id="courseEnrollCount">
-                                        <!-- <span id="courseEnrollLoading">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div> Loading...
-                                        </span> -->
-                                        128
-                                    </div>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-user-plus text-white-50">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between small">
-                            <a class='text-white stretched-link' href='/studentMgmt.html'>View Report</a>
-                            <div class="text-dark">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-right text-white-50">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="card bg-pink text-dark h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="me-3">
-                                    <div class="text-white-75 small">Invoices</div>
-                                    <div class="text-lg fw-bold" id="contactUsCount">
-                                        <!-- <span id="contactLoading">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div> Loading...
-                                        </span> -->
-                                        33
-                                    </div>
-                                </div>
+            <a href="/viewInvoices.html" class="btn btn-secondary"> <i class="bi bi-receipt"></i> View Invoices</a>
+            <div class="card mt-3">
+                <div class="card-header">Recent Admissions</div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-purple">
+                                <tr>
+                                    <th scope="col"># Invoice Number</th>
+                                    <th scope="col">Invoice Date</th>
+                                    <th scope="col">Customer Name</th>
+                                    <th scope="col">Payment Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">23CBINV1003001</th>
+                                    <td>29-Oct-2023</td>
+                                    <td>Prakash Velayudham</td>
+                                    <td>
+                                        <span class="badge text-bg-success">Paid</span>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-primary btn-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg> </button>
+                                            <button class="btn btn-secondary btn-sm">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-message-square text-dark-50">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between small">
-                            <a class='text-dark stretched-link' href='/invoiceMgmt.html'>View Report</a>
-                            <div class="text-dark">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-right text-dark-50">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="card bg-purple text-white h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="me-3">
-                                    <div class="text-white-75 small">Asset Management</div>
-                                    <div class="text-lg fw-bold" id="careersCount">
-                                        <!-- <span id="careerLoading">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div> Loading...
-                                        </span> -->
-                                        26
-                                    </div>
-                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-download">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                                </svg> </button>
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-users text-white-50">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between small">
-                            <a class='text-white stretched-link' href='/careers'>View Tasks</a>
-                            <div class="text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-right text-dark-50">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="card bg-pink text-dark h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="me-3">
-                                    <div class="text-white-75 small">Certification Management</div>
-                                    <div class="text-lg fw-bold" id="careersCount">
-                                        <!-- <span id="careerLoading">
-                                            <div class="spinner-border spinner-border-sm" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div> Loading...
-                                        </span> -->
-                                        56
-                                    </div>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-align-left">
-                                    <line x1="17" y1="10" x2="3" y2="10"></line>
-                                    <line x1="21" y1="6" x2="3" y2="6"></line>
-                                    <line x1="21" y1="14" x2="3" y2="14"></line>
-                                    <line x1="17" y1="18" x2="3" y2="18"></line>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between small">
-                            <a class='text-dark stretched-link' href='/marquee'>Update</a>
-                            <div class="text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-right text-dark-50">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </div>
-                        </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-nowrap">
+                                    <th scope="row">23CBINV1003002</th>
+                                    <td>29-Oct-2023</td>
+                                    <td>Stephy Mary</td>
+                                    <td>
+                                        <span class="badge text-bg-warning">Partly Paid</span>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-primary btn-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg> </button>
+                                            <button class="btn btn-secondary btn-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-download">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                                </svg> </button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">23CBINV1003003</th>
+                                    <td>29-Oct-2023</td>
+                                    <td>Mahesh Kumar</td>
+                                    <td>
+                                        <span class="badge text-bg-danger">Not Paid</span>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-primary btn-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-secondary btn-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-download">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -217,10 +184,12 @@
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create New Invoice</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New Student</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <h5 class="fw-bold text-purple mb-3">Personal Details</h5>
+                        <hr>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
@@ -266,6 +235,40 @@
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Father's Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Father's Mobile Number</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Mother's Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" id="floatingPassword"
+                                        placeholder="Year of Passout">
+                                    <label for="floatingPassword">Mother's Mobile Number</label>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="fw-bold my-3 text-purple">Educational Details</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPassword"
                                         placeholder="SSLC Percentage">
                                     <label for="floatingPassword">SSLC Percentage</label>
                                 </div>
@@ -282,27 +285,6 @@
                                     <input type="tel" class="form-control" id="floatingPassword"
                                         placeholder="HSC Percentage">
                                     <label for="floatingPassword">Diploma Percentage (if any)</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="floatingInput"
-                                        placeholder="Date of Joining" readonly>
-                                    <label for="floatingInput">Date of Joining (Generated Automatically)</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select" id="floatingSelect"
-                                        aria-label="Floating label select example">
-                                        <option selected>Select Installment Type</option>
-                                        <option value="1">Single Payment - 1 x Rs.10,000</option>
-                                        <option value="2">2 Months Installment - 2 x Rs.5,000</option>
-                                        <option value="2">3 Months Installment - 3 x Rs.3,500</option>
-                                    </select>
-                                    <label for="floatingSelect">Installment Type</label>
                                 </div>
                             </div>
                         </div>
@@ -422,40 +404,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingPassword"
-                                        placeholder="Year of Passout">
-                                    <label for="floatingPassword">Father's Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="tel" class="form-control" id="floatingPassword"
-                                        placeholder="Year of Passout">
-                                    <label for="floatingPassword">Father's Mobile Number</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingPassword"
-                                        placeholder="Year of Passout">
-                                    <label for="floatingPassword">Mother's Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="tel" class="form-control" id="floatingPassword"
-                                        placeholder="Year of Passout">
-                                    <label for="floatingPassword">Mother's Mobile Number</label>
-                                </div>
-                            </div>
-                        </div>
-
+                        <!-- Other Details -->
+                        <h5 class="fw-bold text-purple my-3">Other Details</h5>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
@@ -473,7 +423,28 @@
                                 <div class="form-floating mb-3">
                                     <input type="tel" class="form-control" id="floatingPassword"
                                         placeholder="Year of Passout">
-                                    <label for="floatingPassword">Mother's Mobile Number</label>
+                                    <label for="floatingPassword">How did you hear about us?</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="floatingInput"
+                                        placeholder="Date of Joining" readonly>
+                                    <label for="floatingInput">Date of Joining (Generated Automatically)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>Select Installment Type</option>
+                                        <option value="1">Single Payment - 1 x Rs.10,000</option>
+                                        <option value="2">2 Months Installment - 2 x Rs.5,000</option>
+                                        <option value="2">3 Months Installment - 3 x Rs.3,500</option>
+                                    </select>
+                                    <label for="floatingSelect">Installment Type</label>
                                 </div>
                             </div>
                         </div>
